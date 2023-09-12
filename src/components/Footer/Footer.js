@@ -144,6 +144,14 @@ const TopRow = styled.div`
   font-size: 0.875rem;
   border-bottom: 1px solid var(--color-gray-700);
   padding: 24px 0;
+
+	@media ${p => p.theme.queries.tabletAndUp} {
+		flex-direction: row;
+		justify-content: center;
+	}
+	@media ${p => p.theme.queries.laptopAndUp} {
+		justify-content: right;
+	}
 `;
 
 const Social = styled.div`
@@ -170,6 +178,14 @@ const MainNavArea = styled.div`
   gap: 32px;
   padding: 32px 0 48px;
   text-align: center;
+	
+	@media ${p => p.theme.queries.tabletAndUp} {
+		text-align:revert;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		gap: 74px;
+	}
+
 `;
 
 const MainNavHeading = styled.h2`
@@ -196,6 +212,10 @@ const Subfooter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+	@media ${p => p.theme.queries.laptopAndUp} {
+		align-items: start;
+	}
 `;
 
 const Logo = styled.a`
