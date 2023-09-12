@@ -5,11 +5,11 @@ const OpinionStory = ({ id, title, author, avatar }) => {
   return (
     <a href={`/story/${id}`}>
       <Wrapper>
-        <Avatar alt="" src={avatar} />
         <div>
           <AuthorName>{author}</AuthorName>
           <ArticleTitle>{title}</ArticleTitle>
         </div>
+        <Avatar alt="" src={avatar} />
       </Wrapper>
     </a>
   );
@@ -17,6 +17,17 @@ const OpinionStory = ({ id, title, author, avatar }) => {
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5em;
+
+	@media ${({theme}) => theme.queries.tabletOnly} {
+		flex-direction: column;
+		align-items: start;
+		img { order: -1 }
+	}
 `;
 
 const Avatar = styled.img`

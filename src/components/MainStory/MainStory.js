@@ -44,6 +44,19 @@ const Abstract = styled.p`
   font-size: 1rem;
   margin-bottom: 1em;
   white-space: pre-wrap;
+
+	/* To limit lines on the paragraph */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden; /* For line-clamping */
+
+  @media ${({theme}) => theme.queries.tabletAndUp} {
+    -webkit-line-clamp: 16;
+  }
+  @media ${({theme}) => theme.queries.laptopAndUp} {
+    -webkit-line-clamp: 10;
+  }
 `;
 
 const Location = styled.span`
